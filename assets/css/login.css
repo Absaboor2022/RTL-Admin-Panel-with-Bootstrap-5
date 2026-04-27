@@ -1,0 +1,231 @@
+        :root {
+            --primary-modern: #F0F8FF;
+            --primary-light: #E6F3FF;
+            --primary-dark: #D0E4F5;
+            --bg-light: #f8fafc;
+            --bg-dark: #121212;
+            --surface-light: #ffffff;
+            --surface-dark: #1e1e2f;
+            --text-light: #1e293b;
+            --text-dark: #e2e8f0;
+            --border-light: #e9eef3;
+            --border-dark: #2d2d3f;
+        }
+
+        * {
+            transition: background-color 0.2s ease, color 0.2s, border-color 0.2s;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, 'Tahoma';
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* تم لایت (پیش‌فرض) */
+        body.light-mode {
+            background: linear-gradient(135deg, #e8f0fe 0%, #d4e4fc 100%);
+            color: var(--text-light);
+        }
+        body.light-mode .login-card {
+            background-color: var(--surface-light);
+            border: 1px solid #e2edf7;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
+        }
+        body.light-mode .form-control {
+            background-color: #ffffff;
+            border-color: #e2edf7;
+            color: var(--text-light);
+        }
+        body.light-mode .input-group-text {
+            background-color: #F0F8FF;
+            border-color: #e2edf7;
+            color: #2c3e66;
+        }
+
+        /* تم دارک */
+        body.dark-mode {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a2e 100%);
+            color: var(--text-dark);
+        }
+        body.dark-mode .login-card {
+            background-color: var(--surface-dark);
+            border: 1px solid var(--border-dark);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
+        }
+        body.dark-mode .form-control {
+            background-color: #2a2a3a;
+            border-color: var(--border-dark);
+            color: var(--text-dark);
+        }
+        body.dark-mode .form-control:focus {
+            background-color: #2f2f42;
+            border-color: #b8d4f0;
+        }
+        body.dark-mode .input-group-text {
+            background-color: #2a2a3a;
+            border-color: var(--border-dark);
+            color: #94a3b8;
+        }
+        body.dark-mode .text-muted {
+            color: #94a3b8 !important;
+        }
+
+        /* کارت لاگین */
+        .login-card {
+            border-radius: 36px;
+            backdrop-filter: blur(2px);
+            transition: all 0.3s ease;
+            max-width: 420px;
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .login-header i {
+            font-size: 2.5rem;
+            color: #2c3e66;
+            background: rgba(240, 248, 255, 0.8);
+            padding: 12px;
+            border-radius: 24px;
+            margin-bottom: 0.75rem;
+        }
+        .login-header h3 {
+            font-weight: 700;
+            font-size: 1.6rem;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.25rem;
+            color: #2c3e66;
+        }
+        .login-header p {
+            font-size: 0.85rem;
+        }
+
+        .form-control, .input-group-text {
+            border-radius: 16px !important;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+        }
+        .form-control:focus {
+            border-color: #b8d4f0;
+            box-shadow: 0 0 0 3px rgba(176, 196, 222, 0.2);
+        }
+        .btn-login {
+            background: #2c3e66;
+            border: none;
+            padding: 10px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            color: white;
+        }
+        .btn-login:hover {
+            background: #1e2a4a;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(44, 62, 102, 0.2);
+        }
+        .theme-toggle-login {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(44, 62, 102, 0.1);
+            backdrop-filter: blur(8px);
+            z-index: 1100;
+            border: 1px solid rgba(44, 62, 102, 0.2);
+        }
+        .theme-toggle-login i {
+            font-size: 1.2rem;
+            color: #2c3e66;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #cbd5e1;
+            font-size: 0.75rem;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid;
+            margin: 0 8px;
+        }
+        body.light-mode .divider::before,
+        body.light-mode .divider::after {
+            border-color: #e2edf7;
+        }
+        body.dark-mode .divider::before,
+        body.dark-mode .divider::after {
+            border-color: var(--border-dark);
+        }
+        a {
+            color: #2c3e66;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+        a:hover {
+            color: #1e2a4a;
+            text-decoration: underline;
+        }
+        .form-label {
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+        .form-check-label {
+            font-size: 0.8rem;
+        }
+        
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding: 12px;
+            }
+            .login-card {
+                padding: 1.75rem !important;
+                max-width: 100%;
+            }
+            .theme-toggle-login {
+                top: 12px;
+                left: 12px;
+                width: 36px;
+                height: 36px;
+            }
+        }
+        
+        @media (min-width: 577px) and (max-width: 1200px) {
+            .login-card {
+                max-width: 400px;
+                padding: 2rem !important;
+            }
+        }
+        
+        @media (min-width: 1201px) {
+            .login-card {
+                max-width: 420px;
+            }
+        }
